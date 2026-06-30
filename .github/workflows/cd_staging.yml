@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH into the server
       - run: |
           echo ${{ secrets.ID_DIGITAL_OCEAN }} &> ~/ssh_key
           ssh -i ~/ssh_key root@168.144.23.95
