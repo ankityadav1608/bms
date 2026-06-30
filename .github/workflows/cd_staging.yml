@@ -11,7 +11,8 @@ jobs:
 
     steps:
       - run: |
-          echo ${{ secrets.ID_DIGITAL_OCEAN }} &> ~/ssh_key
+          echo "${{ secrets.ID_DIGITAL_OCEAN }}" &> ~/ssh_key
+          echo "${{ secrets.KNOWN_HOSTS }}" &> ~/.ssh/known_hosts
           ssh -i ~/ssh_key root@168.144.23.95
           cd bms/ && git pull
           pnpm install
